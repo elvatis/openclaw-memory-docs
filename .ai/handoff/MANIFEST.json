@@ -4,10 +4,10 @@
   "last_session": {
     "agent": "claude-code",
     "session_id": "t009-list-ids-2026-03-01",
-    "timestamp": "2026-03-01T14:33:00.000Z",
+    "timestamp": "2026-03-01T13:35:36.430Z",
     "commit": "e50d764",
     "phase": "implementation",
-    "duration_minutes": 1
+    "duration_minutes": 2
   },
   "files": {
     "STATUS.md": {
@@ -40,7 +40,7 @@
     }
   },
   "quick_context": "T-009 verified: /list-docs already displays item IDs (implemented by T-003). Code shows [id:shortId] per line + full IDs in footer. 131 tests passing. Type-check clean. GitHub issue #4 already closed. Remaining open tasks: T-010 (unit tests), T-011 (export/sync), T-012 (tags+project).",
-  "next_task_id": 13,
+  "next_task_id": 25,
   "tasks": {
     "T-001": {
       "title": "Define v0.2 roadmap items as issues and prioritize",
@@ -105,7 +105,7 @@
       "priority": "low",
       "depends_on": [],
       "created": "2026-02-27T08:40:56Z",
-      "github_issue": "https://github.com/elvatis/openclaw-memory-docs/issues/2",
+      "github_issue": 2,
       "completed": "2026-02-27T07:52:25.364Z"
     },
     "T-008": {
@@ -125,39 +125,154 @@
       "priority": "high",
       "depends_on": [],
       "created": "2026-03-01T12:58:54.360Z",
-      "completed": "2026-03-01T14:33:00.000Z",
-      "notes": "Already implemented by T-003. Verified: code shows [id:shortId] per line and full IDs in footer. 131 tests pass including dedicated ID display tests.",
+      "notes": "## Problem\n\nThe `/list-docs` command truncates output to date and text preview but does not show the item ID. The `/forget-doc` command requires an ID to delete an item. Users currently have no way to discover the ID of a memory item through the CLI.\n\nThis makes `/forget-doc` effectively unusable without inspecting the raw JSONL file.\n\n## Current behavior\n\n```\n1. [2026-02-27] Dubai: decide A vs B, then collect facts...\n```\n\n## Expected behavior\n\n```\n1. [abc123] [2026-02-27] Dubai: decide A vs B,",
       "github_issue": 4,
-      "github_repo": "elvatis/openclaw-memory-docs"
+      "github_repo": "elvatis/openclaw-memory-docs",
+      "completed": "2026-03-01T13:35:36.430Z"
     },
     "T-010": {
       "title": "v0.2: Add unit tests for all commands and the search tool",
-      "status": "ready",
+      "status": "done",
       "priority": "medium",
       "depends_on": [],
       "created": "2026-03-01T12:58:54.360Z",
       "notes": "## Problem\n\nThe plugin has zero test coverage. The CONVENTIONS.md states \"All new code must have unit tests\" and \"Tests must pass before every commit,\" but no tests exist. This is the most critical gap for v0.2.\n\n## Acceptance criteria\n\n- [ ] Unit tests for `/remember-doc` - stores item, redacts secrets, rejects empty input\n- [ ] Unit tests for `/search-docs` - returns ranked results, respects limit, handles empty query\n- [ ] Unit tests for `/list-docs` - returns items in reverse chronological o",
       "github_issue": 3,
-      "github_repo": "elvatis/openclaw-memory-docs"
+      "github_repo": "elvatis/openclaw-memory-docs",
+      "completed": "2026-03-01T14:00:00.000Z"
     },
     "T-011": {
       "title": "v0.2: export/sync mode (git-first)",
-      "status": "ready",
+      "status": "done",
       "priority": "medium",
       "depends_on": [],
       "created": "2026-03-01T12:58:54.360Z",
       "notes": "Optional export mode that writes docs memory to a directory of markdown files (one per item) for repo/wiki sync.\n\nAcceptance:\n- config: exportDir\n- deterministic filenames\n- no secrets",
-      "github_issue": 2,
-      "github_repo": "elvatis/openclaw-memory-docs"
+      "completed": "2026-03-01T14:00:00.000Z"
     },
     "T-012": {
       "title": "v0.2: /remember-doc supports tags + project",
-      "status": "ready",
+      "status": "done",
       "priority": "medium",
       "depends_on": [],
       "created": "2026-03-01T12:58:54.360Z",
       "notes": "Extend /remember-doc to support optional metadata, e.g.\n/remember-doc --tags dubai,tax --project dubai <text>\nStore meta fields and expose in search results.",
       "github_issue": 1,
+      "github_repo": "elvatis/openclaw-memory-docs",
+      "completed": "2026-03-01T14:00:00.000Z"
+    },
+    "T-013": {
+      "title": "[T-024] GitHub issue #1 closed",
+      "status": "ready",
+      "priority": "medium",
+      "depends_on": [],
+      "created": "2026-03-01T14:12:19.056Z",
+      "notes": "**AAHP Task:** `T-024`  \n**Status:** ready  \n**Priority:** medium  \n\n\n\n\n---\n*Auto-created from AAHP manifest · project: openclaw-memory-docs*",
+      "github_issue": 7,
+      "github_repo": "elvatis/openclaw-memory-docs"
+    },
+    "T-014": {
+      "title": "[T-023] Tags/project visible in search results",
+      "status": "ready",
+      "priority": "medium",
+      "depends_on": [],
+      "created": "2026-03-01T14:12:19.057Z",
+      "notes": "**AAHP Task:** `T-023`  \n**Status:** ready  \n**Priority:** medium  \n\n\n\n\n---\n*Auto-created from AAHP manifest · project: openclaw-memory-docs*",
+      "github_issue": 8,
+      "github_repo": "elvatis/openclaw-memory-docs"
+    },
+    "T-015": {
+      "title": "[T-022] `/remember-doc` supports `--project` flag",
+      "status": "ready",
+      "priority": "medium",
+      "depends_on": [],
+      "created": "2026-03-01T14:12:19.057Z",
+      "notes": "**AAHP Task:** `T-022`  \n**Status:** ready  \n**Priority:** medium  \n\n\n\n\n---\n*Auto-created from AAHP manifest · project: openclaw-memory-docs*",
+      "github_issue": 9,
+      "github_repo": "elvatis/openclaw-memory-docs"
+    },
+    "T-016": {
+      "title": "[T-021] `/remember-doc` supports `--tags` flag",
+      "status": "ready",
+      "priority": "medium",
+      "depends_on": [],
+      "created": "2026-03-01T14:12:19.057Z",
+      "notes": "**AAHP Task:** `T-021`  \n**Status:** ready  \n**Priority:** medium  \n\n\n\n\n---\n*Auto-created from AAHP manifest · project: openclaw-memory-docs*",
+      "github_issue": 10,
+      "github_repo": "elvatis/openclaw-memory-docs"
+    },
+    "T-017": {
+      "title": "[T-020] GitHub issue #2 closed",
+      "status": "ready",
+      "priority": "medium",
+      "depends_on": [],
+      "created": "2026-03-01T14:12:19.057Z",
+      "notes": "**AAHP Task:** `T-020`  \n**Status:** ready  \n**Priority:** medium  \n\n\n\n\n---\n*Auto-created from AAHP manifest · project: openclaw-memory-docs*",
+      "github_issue": 11,
+      "github_repo": "elvatis/openclaw-memory-docs"
+    },
+    "T-018": {
+      "title": "[T-019] Config option for export directory",
+      "status": "ready",
+      "priority": "medium",
+      "depends_on": [],
+      "created": "2026-03-01T14:12:19.057Z",
+      "notes": "**AAHP Task:** `T-019`  \n**Status:** ready  \n**Priority:** medium  \n\n\n\n\n---\n*Auto-created from AAHP manifest · project: openclaw-memory-docs*",
+      "github_issue": 12,
+      "github_repo": "elvatis/openclaw-memory-docs"
+    },
+    "T-019": {
+      "title": "All commands have unit tests",
+      "status": "ready",
+      "priority": "medium",
+      "depends_on": [],
+      "created": "2026-03-01T14:12:19.058Z",
+      "github_issue": 19,
+      "github_repo": "elvatis/openclaw-memory-docs"
+    },
+    "T-020": {
+      "title": "Search tool has unit tests",
+      "status": "ready",
+      "priority": "medium",
+      "depends_on": [],
+      "created": "2026-03-01T14:12:19.058Z",
+      "github_issue": 20,
+      "github_repo": "elvatis/openclaw-memory-docs"
+    },
+    "T-021": {
+      "title": "Edge cases covered (empty input, invalid args, etc.)",
+      "status": "ready",
+      "priority": "medium",
+      "depends_on": [],
+      "created": "2026-03-01T14:12:19.058Z",
+      "github_issue": 21,
+      "github_repo": "elvatis/openclaw-memory-docs"
+    },
+    "T-022": {
+      "title": "GitHub issue #3 closed",
+      "status": "ready",
+      "priority": "medium",
+      "depends_on": [],
+      "created": "2026-03-01T14:12:19.058Z",
+      "github_issue": 22,
+      "github_repo": "elvatis/openclaw-memory-docs"
+    },
+    "T-023": {
+      "title": "Export produces deterministic filenames",
+      "status": "ready",
+      "priority": "medium",
+      "depends_on": [],
+      "created": "2026-03-01T14:12:19.058Z",
+      "github_issue": 23,
+      "github_repo": "elvatis/openclaw-memory-docs"
+    },
+    "T-024": {
+      "title": "No secrets in exported files",
+      "status": "ready",
+      "priority": "medium",
+      "depends_on": [],
+      "created": "2026-03-01T14:12:19.058Z",
+      "github_issue": 24,
       "github_repo": "elvatis/openclaw-memory-docs"
     }
   }

@@ -48,7 +48,9 @@
       "priority": "medium",
       "depends_on": [],
       "created": "2026-02-24T00:00:00Z",
-      "completed": "2026-02-27T01:00:00Z"
+      "completed": "2026-02-27T01:00:00Z",
+      "github_repo": "elvatis/openclaw-memory-docs",
+      "github_issue": 6
     },
     "T-002": {
       "title": "Add unit tests for all commands and the search tool (#3)",

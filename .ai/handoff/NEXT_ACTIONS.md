@@ -10,42 +10,13 @@
 
 | Status | Count |
 |--------|-------|
-| Done | 8 |
-| Ready | 4 |
+| Done | 9 |
+| Ready | 3 |
 | Blocked | 0 |
 
 ---
 
 ## Ready - Work These Next
-
-### T-009: /list-docs should display item IDs for use with /forget-doc
-
-**Goal:** Make `/forget-doc` usable by ensuring item IDs are prominently displayed in `/list-docs` output.
-
-**GitHub issue:** [#4](https://github.com/elvatis/openclaw-memory-docs/issues/4)
-**Priority:** HIGH
-
-**Context:**
-- `/forget-doc <id>` requires a UUID but users need a clear way to discover IDs
-- `/list-docs` already shows short IDs `[id:abc12345]` in output (added previously)
-- The full IDs are appended at the end of the list output
-- Issue may already be resolved - verify current behavior matches expected behavior from issue description
-
-**What to do:**
-1. Check issue #4 description for the exact expected output format
-2. Compare with current `/list-docs` output format in `index.ts:308-314`
-3. If already resolved, close the issue and mark done
-4. If not, adjust the output format to match expectations
-5. Ensure tests cover the ID display behavior
-
-**Files:** `index.ts`, `tests/index.test.ts`
-
-**Definition of done:**
-- [ ] `/list-docs` output shows item IDs in a user-friendly format
-- [ ] Tests verify ID display
-- [ ] GitHub issue #4 closed
-
----
 
 ### T-010: Add unit tests for all commands and the search tool
 
@@ -145,11 +116,11 @@ _No blocked tasks._
 
 | Task | Date | Notes |
 |------|------|-------|
+| T-009: /list-docs displays item IDs | 2026-03-01 | Already implemented by T-003. Verified: [id:shortId] per line + full IDs in footer. |
 | T-008: Update README and SKILL.md | 2026-03-01 | Docs already comprehensive from T-005. Fixed test mock issue. |
 | T-007: Add export/sync mode | 2026-02-27 | /export-docs and /import-docs commands with markdown files |
 | T-006: Export/sync mode | 2026-02-27 | Superseded by T-007 |
 | T-005: Update README/SKILL.md | 2026-02-27 | All commands, tool, and config documented |
-| T-004: Tag/project metadata | 2026-02-27 | --tags and --project flags for /remember-doc |
 
 ---
 

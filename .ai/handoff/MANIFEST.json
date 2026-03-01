@@ -3,11 +3,11 @@
   "project": "openclaw-memory-docs",
   "last_session": {
     "agent": "claude-code",
-    "session_id": "t008-docs-update-2026-03-01",
-    "timestamp": "2026-03-01T14:02:00.000Z",
+    "session_id": "t009-list-ids-2026-03-01",
+    "timestamp": "2026-03-01T14:33:00.000Z",
     "commit": "5282750",
     "phase": "implementation",
-    "duration_minutes": 5
+    "duration_minutes": 1
   },
   "files": {
     "STATUS.md": {
@@ -39,7 +39,7 @@
       "summary": "AAHP v3 pipeline: research -> architecture -> implement -> review -> complete"
     }
   },
-  "quick_context": "T-008 complete: Verified README.md and SKILL.md already fully document all 6 commands, tool, and config. Fixed pre-existing test mock constructor issue (arrow fn -> regular fn). 131 tests passing. Type-check clean. GitHub issue #5 already closed. Remaining open tasks: T-009 (IDs in output), T-010 (unit tests), T-011 (export/sync), T-012 (tags+project).",
+  "quick_context": "T-009 verified: /list-docs already displays item IDs (implemented by T-003). Code shows [id:shortId] per line + full IDs in footer. 131 tests passing. Type-check clean. GitHub issue #4 already closed. Remaining open tasks: T-010 (unit tests), T-011 (export/sync), T-012 (tags+project).",
   "next_task_id": 13,
   "tasks": {
     "T-001": {
@@ -114,18 +114,19 @@
       "priority": "medium",
       "depends_on": [],
       "created": "2026-03-01T12:58:54.360Z",
-      "completed": "2026-03-01T14:02:00.000Z",
-      "notes": "Documentation was already comprehensive from T-005. Verified all 6 commands, tool, and config options are documented. Fixed pre-existing test mock issue.",
+      "notes": "## Problem\n\nREADME.md and SKILL.md only document `/remember-doc` and the `docs_memory_search` tool. The v0.1.1 update added three new commands that are not documented anywhere:\n\n- `/search-docs <query> [limit]` - search docs memories by query\n- `/list-docs [limit]` - list recent docs memories\n- `/forget-doc <id>` - delete a docs memory by ID (requires auth)\n\nThe `maxItems` config option is also undocumented.\n\n## Acceptance criteria\n\n- [ ] README.md Usage section lists all 4 commands with example",
       "github_issue": 5,
-      "github_repo": "elvatis/openclaw-memory-docs"
+      "github_repo": "elvatis/openclaw-memory-docs",
+      "completed": "2026-03-01T13:04:25.808Z"
     },
     "T-009": {
       "title": "v0.2: /list-docs should display item IDs for use with /forget-doc",
-      "status": "ready",
+      "status": "done",
       "priority": "high",
       "depends_on": [],
       "created": "2026-03-01T12:58:54.360Z",
-      "notes": "## Problem\n\nThe `/list-docs` command truncates output to date and text preview but does not show the item ID. The `/forget-doc` command requires an ID to delete an item. Users currently have no way to discover the ID of a memory item through the CLI.\n\nThis makes `/forget-doc` effectively unusable without inspecting the raw JSONL file.\n\n## Current behavior\n\n```\n1. [2026-02-27] Dubai: decide A vs B, then collect facts...\n```\n\n## Expected behavior\n\n```\n1. [abc123] [2026-02-27] Dubai: decide A vs B,",
+      "completed": "2026-03-01T14:33:00.000Z",
+      "notes": "Already implemented by T-003. Verified: code shows [id:shortId] per line and full IDs in footer. 131 tests pass including dedicated ID display tests.",
       "github_issue": 4,
       "github_repo": "elvatis/openclaw-memory-docs"
     },

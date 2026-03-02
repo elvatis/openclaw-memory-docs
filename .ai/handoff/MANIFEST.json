@@ -44,7 +44,7 @@
   "tasks": {
     "T-001": {
       "title": "Define v0.2 roadmap items as issues and prioritize",
-      "status": "completed",
+      "status": "done",
       "priority": "medium",
       "depends_on": [],
       "created": "2026-02-24T00:00:00Z",
